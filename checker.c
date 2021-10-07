@@ -12,12 +12,10 @@
 
 #include "./push_swap.h"
 
-t_list		input_check(char *str)
+t_list		input_check(t_list *list, char *str)
 {
 	if(!check_alpha_and_null(str))
 	{
-		t_list	list;
-
 		while (str && *str)
 		{
 			list = ft_listadd_back(list, ft_lstnew(ft_atoi(str)));
@@ -28,7 +26,7 @@ t_list		input_check(char *str)
 		}	
 	}
 	else
-		return (err());
+		return (NULL));
 	return (list);
 }
 

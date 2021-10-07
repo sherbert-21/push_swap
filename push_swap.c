@@ -14,11 +14,21 @@
 
 int		main(int argc, char **argv)
 {
+	t_list *list;
+
 	if (--argc < 2)
 		return (0);
 	else
 	{
-		input_check(argv[1]);	
+		list = input_check(argv[1]);
+		if (list == NULL)
+			return(err());
+		if (is_sorted(list))
+			return (0);
+		else if (ft_lstsize(list) < 3)
+			sort_small(list);
+		else
+			sort_big(list);
 	}
 	
 }

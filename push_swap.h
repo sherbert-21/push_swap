@@ -14,4 +14,4 @@
 # define PUSH_SWAP_H
 # include "./libft/libft.h"
 
-int		input_check(char *str);
+int		input_check(t_list *list, char *str);
