@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:41:43 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/07 13:05:13 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/07 13:20:12 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		sort_small(int *a)
 {
     if (sizeof(a) / sizeof(int) == 2)
-        ft_printf("sa\n")
+        ft_printf("%sa\n")
     else
         sort_three(a);
     return (0);       
@@ -25,26 +25,26 @@ int     sort_three(int *a)
 {
     if (a[0] > a[2])
     {
-        ft_printf("ra\n");
+        ft_printf("%sra\n");
         if  (a[2] > a[1])
-            ft_printf("sa\n")
+            ft_printf("%sa\n")
     }
     else if (a[0] > a[1])
     {
         if (a[0] > a[2])
         {
-            ft_printf("ra\n");
+            ft_printf("%sra\n");
             if  (a[2] > a[1])
-                ft_printf("sa\n")
+                ft_printf("%sa\n")
         }
         else
-            ft_printf("sa\n")
+            ft_printf("%sa\n")
             
     }
     else if (a[1] > a[2])
     {
-        ft_printf("ra\n");
+        ft_printf("%sra\n");
         if  (a[2] > a[1])
-            ft_printf("sa\n")
+            ft_printf("%sa\n")
     }
 }
