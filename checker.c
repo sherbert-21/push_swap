@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/01 19:16:36 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:57:41 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list		input_check(t_list *list, char *str)
 				str++;
 			while (ft_isdigit(*str) && str && *str)
 				str++;
-		}	
+		}
 	}
 	else
 		return (NULL));
@@ -41,4 +41,25 @@ int		check_alpha_and_null(char *str)
 		str++;
 	}
 	return (0);
+}
+
+int		check_double(int *a)
+{
+
+}
+
+int		is_sorted(int *a)
+{
+	int i;
+	int num;
+
+	i = -1;
+	num = 0;
+	while (++i < sizeof(a)/sizeof(int))
+		if (a[i] < a[i + 1])
+			num++;
+	if (num == sizeof(a)/sizeof(int) - 1)
+		return (1);
+	else
+		return (0);
 }
