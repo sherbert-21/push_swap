@@ -12,12 +12,24 @@
 
 #include "./push_swap.h"
 
-int		input_check(t_list *list, char *str)
+t_list		input_check(char *str)
 {
 	if(!check_alpha_and_null(str))
 	{
+		t_list	list;
 
+		while (str && *str)
+		{
+			list = ft_listadd_back(list, ft_lstnew(ft_atoi(str)));
+			while (!ft_isdigit(*str) && str && *str)
+				str++;
+			while (ft_isdigit(*str) && str && *str)
+				str++;
+		}	
 	}
+	else
+		return (err());
+	return (list);
 }
 
 int		check_alpha_and_null(char *str)
@@ -26,7 +38,7 @@ int		check_alpha_and_null(char *str)
 		return (1);
 	while(str)
 	{
-		if(ft_isalpha(*str))
+		if(!ft_isdigit(*str) || str != ' ')
 			return (1);
 		str++;
 	}

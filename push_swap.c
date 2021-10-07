@@ -14,9 +14,11 @@
 
 int		main(int argc, char **argv)
 {
-	int		*a;
-
 	if (--argc < 2)
 		return (0);
+	else
+	{
+		input_check(argv[1]);	
+	}
 	
 }
