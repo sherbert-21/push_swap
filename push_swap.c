@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/07 12:04:56 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/07 12:51:11 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(int argc, char **argv)
 			return (err())
 		if (is_sorted(a) || sizeof(a)/sizeof(int) == 1)
 			return (0);
-		else if (sizeof(a)/sizeof(int) < 6)
+		else if (sizeof(a)/sizeof(int) < 4)
 			sort_small(list);
 		else
 			sort_big(list);

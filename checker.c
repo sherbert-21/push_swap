@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/07 11:57:41 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/07 12:45:55 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,18 @@ int		check_alpha_and_null(char *str)
 
 int		check_double(int *a)
 {
+	int i;
+	int j;
 
+	i = -1;
+	while (++i < sizeof(a)/sizeof(int) - 1)
+	{
+		j = 0;
+		while (++j < sizeof(a)/sizeof(int))
+			if (a[i] == a[j])
+				return (1)
+	}
+	return (0);
 }
 
 int		is_sorted(int *a)
