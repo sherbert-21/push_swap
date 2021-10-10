@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hex_format.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 02:00:10 by sherbert          #+#    #+#             */
-/*   Updated: 2020/07/13 02:48:57 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 14:03:56 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
 static char		ft_dec_to_hex(unsigned int i)
 {

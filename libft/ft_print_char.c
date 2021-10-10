@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 03:32:58 by sherbert          #+#    #+#             */
-/*   Updated: 2020/07/18 07:53:03 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 14:03:51 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
 int		ft_print_char(char c, t_flag flags)
 {

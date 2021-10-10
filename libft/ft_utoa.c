@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/18 07:52:17 by sherbert          #+#    #+#             */
-/*   Updated: 2020/07/18 07:52:23 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 14:03:50 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
 static int				ft_len(unsigned int nb)
 {

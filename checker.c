@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 12:24:57 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 13:57:29 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		input_check(t_list **list, char *str)
 	{
 		while (str && *str)
 		{
-			ft_lstadd_back(list, ft_lstnew((void*)ft_atoi(str)));
+			ft_lstadd_back(list, ft_lstnew((void*)(intptr_t)ft_atoi(str)));
 			while (!ft_isdigit(*str) && str && *str)
 				str++;
 			while (ft_isdigit(*str) && str && *str)

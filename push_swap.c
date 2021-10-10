@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 12:22:01 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 14:17:15 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ int		main(int argc, char **argv)
 	t_list *first_list;
 	int *a;
 
-	if (--argc < 2)
+	list = NULL;
+	if (--argc < 1)
+	{
+		ft_printf("%s/n");
 		return (0);
+	}
 	else
 	{
 		first_list = list;

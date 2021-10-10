@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 20:01:32 by sherbert          #+#    #+#             */
-/*   Updated: 2020/07/18 07:52:37 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 14:03:54 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
 static int		ft_no_dot(char *s, t_flag flags, int len)
 {

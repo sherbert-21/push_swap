@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:41:43 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 12:23:49 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 13:47:11 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void     sort_three(int *a)
     else if (a[1] > a[2])
     {
         ft_printf("%sra\n");
-        if  (a[2] > a[1])
+        if  (a[2] > a[0])
             ft_printf("%sa\n");
     }
 }

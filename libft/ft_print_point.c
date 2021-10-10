@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_point.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 02:00:20 by sherbert          #+#    #+#             */
-/*   Updated: 2020/07/18 08:06:38 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 14:03:53 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
 static t_flag		ft_flags_length(t_flag flags, int len, size_t i)
 {

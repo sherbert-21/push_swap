@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 10:58:25 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 11:01:03 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 14:04:10 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int     ft_int_array_size(int *a)
     i = 0;
     while (a[i])
         i++;
-    return (i) 
+    return (i);
 }

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_flags.c                                   :+:      :+:    :+:   */
+/*   ft_print_format.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 22:48:15 by sherbert          #+#    #+#             */
-/*   Updated: 2020/07/13 02:05:11 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 14:03:51 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 
 static t_flag		ft_format(const char *str, t_flag flags)
 {
