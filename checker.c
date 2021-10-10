@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 13:57:29 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 15:25:52 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static int		check_alpha_and_null(char *str)
 {
 	if(!str || !*str)
 		return (1);
-	while(str)
+	while(*str)
 	{
-		if(!ft_isdigit(*str) || *str != ' ')
+		if(!ft_isdigit((int)*str) || *str != 32)
 			return (1);
 		str++;
 	}
@@ -27,9 +27,6 @@ static int		check_alpha_and_null(char *str)
 
 void		input_check(t_list **list, char *str)
 {
-	t_list	*first;
-
-	first = *list;
 	if(!check_alpha_and_null(str))
 	{
 		while (str && *str)
@@ -42,7 +39,7 @@ void		input_check(t_list **list, char *str)
 		}
 	}
 	else
-		ft_lstclear(&first, free);
+		ft_lstclear(list, free);
 }
 
 int		check_double(int *a)
