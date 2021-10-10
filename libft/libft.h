@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 16:10:45 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 10:31:29 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 12:10:18 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,9 @@ char				*ft_strdup_gnl(char *s1, int *err);
 char				*ft_strjoin_gnl(char *s1, char *s2, int *err);
 char				*ft_strcpy(char *dest, char *src);
 int					get_next_line(int fd, char **line);
+
+void    			ft_array_from_lst(int **a, t_list *lst);
+int     			ft_int_array_size(int *a);;
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10

@@ -6,7 +6,7 @@
 #    By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/30 23:25:58 by sherbert          #+#    #+#              #
-#    Updated: 2021/10/07 13:20:20 by sherbert         ###   ########.fr        #
+#    Updated: 2021/10/10 10:45:31 by sherbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,11 @@ FLAGS	= -c -Wall -Werror -Wextra
 
 HEAD = push_swap.h
 
-SRC = 
+SRC = \
+	push_swap.c \
+	checker.c \
+	sort_small.c \
+	commands.c
 
 OBJ		= 	$(SRC:.c=.o)
 

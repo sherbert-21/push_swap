@@ -6,19 +6,35 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/07 13:20:18 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 12:24:57 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-t_list		input_check(t_list *list, char *str)
+static int		check_alpha_and_null(char *str)
 {
+	if(!str || !*str)
+		return (1);
+	while(str)
+	{
+		if(!ft_isdigit(*str) || *str != ' ')
+			return (1);
+		str++;
+	}
+	return (0);
+}
+
+void		input_check(t_list **list, char *str)
+{
+	t_list	*first;
+
+	first = *list;
 	if(!check_alpha_and_null(str))
 	{
 		while (str && *str)
 		{
-			list = ft_listadd_back(list, ft_lstnew(ft_atoi(str)));
+			ft_lstadd_back(list, ft_lstnew((void*)ft_atoi(str)));
 			while (!ft_isdigit(*str) && str && *str)
 				str++;
 			while (ft_isdigit(*str) && str && *str)
@@ -26,21 +42,7 @@ t_list		input_check(t_list *list, char *str)
 		}
 	}
 	else
-		return (NULL));
-	return (list);
-}
-
-int		check_alpha_and_null(char *str)
-{
-	if(!str || !*str)
-		return (1);
-	while(str)
-	{
-		if(!ft_isdigit(*str) || str != ' ')
-			return (1);
-		str++;
-	}
-	return (0);
+		ft_lstclear(&first, free);
 }
 
 int		check_double(int *a)
@@ -49,12 +51,12 @@ int		check_double(int *a)
 	int j;
 
 	i = -1;
-	while (++i < sizeof(a)/sizeof(int) - 1)
+	while (++i < ft_int_array_size(a) - 1)
 	{
 		j = 0;
-		while (++j < sizeof(a)/sizeof(int))
+		while (++j < ft_int_array_size(a))
 			if (a[i] == a[j])
-				return (1)
+				return (1);
 	}
 	return (0);
 }
@@ -66,10 +68,10 @@ int		is_sorted(int *a)
 
 	i = -1;
 	num = 0;
-	while (++i < sizeof(a)/sizeof(int))
+	while (++i < ft_int_array_size(a))
 		if (a[i] < a[i + 1])
 			num++;
-	if (num == sizeof(a)/sizeof(int) - 1)
+	if (num == ft_int_array_size(a) - 1)
 		return (1);
 	else
 		return (0);

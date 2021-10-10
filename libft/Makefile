@@ -6,7 +6,7 @@
 #    By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/07 19:44:28 by sherbert          #+#    #+#              #
-#    Updated: 2021/10/10 10:31:56 by sherbert         ###   ########.fr        #
+#    Updated: 2021/10/10 12:10:44 by sherbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,7 +71,9 @@ ft_print_char.c \
 ft_print_hex.c \
 ft_print_point.c \
 ft_hex_format.c \
-ft_utoa.c
+ft_utoa.c \
+ft_int_array_size.c \
+ft_array_from_lst.c
 
 
 OBJ		= 	$(SRC:.c=.o)
