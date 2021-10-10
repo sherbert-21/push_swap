@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+         #
+#    By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/07 19:44:28 by sherbert          #+#    #+#              #
-#    Updated: 2020/10/27 16:15:29 by sherbert         ###   ########.fr        #
+#    Updated: 2021/10/10 10:31:56 by sherbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,17 @@ ft_lstclear.c \
 ft_lstiter.c \
 ft_lstmap.c \
 gnl.c \
-utils_gnl.c
+utils_gnl.c \
+ft_printf.c \
+ft_print_format.c \
+ft_print_int.c \
+ft_print_str.c \
+ft_print_unsign.c \
+ft_print_char.c \
+ft_print_hex.c \
+ft_print_point.c \
+ft_hex_format.c \
+ft_utoa.c
 
 
 OBJ		= 	$(SRC:.c=.o)

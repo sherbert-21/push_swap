@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 16:10:45 by sherbert          #+#    #+#             */
-/*   Updated: 2020/11/09 16:15:49 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/10 10:31:29 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,38 @@
 # include <string.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+# include <stdarg.h>
 
 typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_flag
+{
+	int				width;
+	int				sign;
+	char			c;
+	int				dot;
+	int				len;
+	int				star;
+}					t_flag;
+
+void				ft_print_flags(t_flag flags, int len);
+int					ft_print_char(char c, t_flag flags);
+int					ft_print_str(char *s, t_flag flags);
+int					ft_print_unsign(unsigned int i, t_flag flags);
+int					ft_print_hex(unsigned int i, t_flag flags, char c);
+int					ft_print_point(size_t i, t_flag flags);
+int					ft_print_nbr(int i, t_flag flags);
+void				ft_hex_format(size_t i, char c);
+int					ft_hex_len(unsigned int i);
+t_flag				ft_flags_std(const char *str);
+t_flag				ft_stars(int i, t_flag flags);
+int					ft_printf(const char *str, ...);
+char				*ft_utoa(unsigned int n);
+int					ft_point_len(size_t i);
 
 int					ft_atoi(const char *str);
 int					ft_isascii(int c);
