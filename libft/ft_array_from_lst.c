@@ -19,7 +19,7 @@ void    ft_array_from_lst(int **a, t_list *lst)
     i = 0;
     while (lst->next)
 	{
-		a[i] = lst->content;
+		a[i] = (int *)lst->content;
         i++;
         lst = lst->next;
 	}

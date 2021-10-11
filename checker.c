@@ -18,8 +18,8 @@ static int		check_alpha_and_null(char *str)
 		return (1);
 	while(*str)
 	{
-		if(!ft_isdigit((int)*str) || *str != 32)
-			return (1);
+		// if(!ft_isdigit((int)*str) || *str != 32)
+		// 	return (1);
 		str++;
 	}
 	return (0);
@@ -27,6 +27,7 @@ static int		check_alpha_and_null(char *str)
 
 void		input_check(t_list **list, char *str)
 {
+	ft_printf("str = %s |", str);
 	if(!check_alpha_and_null(str))
 	{
 		while (str && *str)

@@ -14,26 +14,31 @@
 
 int		main(int argc, char **argv)
 {
+	int i;
 	t_list *list;
 	int *a;
 
 	list = NULL;
-	if (--argc < 1)
+	i = 0;
+	if (argc < 1)
 	{
 		ft_printf("%s\n");
 		return (0);
 	}
 	else
 	{
-		input_check(&list, argv[1]);
+		while (++i != argc)
+			input_check(&list, argv[i]);
 		ft_printf("all good%s\n", list);
 		// if ()
 		// 	return(err());
 		ft_printf("all good2\n");
-		if (!(a = ft_calloc(ft_lstsize(list) + 1, sizeof(int))))
-			return (err());
+		if (list != NULL)
+			if (!(a = ft_calloc(ft_lstsize(list) + 1, sizeof(int))))
+				return (err());
 		ft_array_from_lst(&a, list);
-		ft_lstclear(&list, free);
+		if (list != NULL)
+			ft_lstclear(&list, free);
 		if(check_double(a))
 			return (err());
 		if (is_sorted(a) || ft_int_array_size(a) == 1)
