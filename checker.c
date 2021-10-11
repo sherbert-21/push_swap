@@ -14,33 +14,51 @@
 
 static int		check_alpha_and_null(char *str)
 {
-	if(!str || !*str)
-		return (1);
 	while(*str)
 	{
-		// if(!ft_isdigit((int)*str) || *str != 32)
-		// 	return (1);
+		ft_printf("/nstr = %s |", str);
+		if(!ft_isdigit(*str) || *str != ' ')
+			return (1);
 		str++;
 	}
 	return (0);
 }
 
-void		input_check(t_list **list, char *str)
+static int		array_size(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str && *str)
+	{
+		while (*str == ' ')
+			str++;
+		i++;
+		while (ft_isdigit(*str) && str && *str)
+			str++;
+	}
+	return (i + 1);
+}
+
+void		input_check(char *str, int **a)
 {
 	ft_printf("str = %s |", str);
+	int i;
+
+	i = -1;
 	if(!check_alpha_and_null(str))
 	{
-		while (str && *str)
+		a = ft_calloc(array_size(str), sizeof(int));
+		while (*str)
 		{
-			ft_lstadd_back(list, ft_lstnew((void*)(intptr_t)ft_atoi(str)));
-			while (!ft_isdigit(*str) && str && *str)
+			ft_printf("str = %s |", str);
+			while (*str == ' ')
 				str++;
+			// a[++i] = ft_atoi(str);
 			while (ft_isdigit(*str) && str && *str)
 				str++;
 		}
 	}
-	else
-		ft_lstclear(list, free);
 }
 
 int		check_double(int *a)

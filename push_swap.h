@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 # include "./libft/libft.h"
 
-void	input_check(t_list **list, char *str);
+void	input_check(char *str, int **a);
 int		check_double(int *a);
 int     is_sorted(int *a);
 void	sort_small(int *a);

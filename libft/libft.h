@@ -101,7 +101,6 @@ char				*ft_strjoin_gnl(char *s1, char *s2, int *err);
 char				*ft_strcpy(char *dest, char *src);
 int					get_next_line(int fd, char **line);
 
-void    			ft_array_from_lst(int **a, t_list *lst);
 int     			ft_int_array_size(int *a);;
 
 # ifndef BUFFER_SIZE
