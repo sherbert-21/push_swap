@@ -12,11 +12,11 @@
 
 #include "./push_swap.h"
 
-int    err(void)
-{
-    ft_printf("%serror\n");
-    return (0);
-}
+// int    err(void)
+// {
+//     ft_printf("%serror\n");
+//     return (0);
+// }
 
 // void    print_commands(char a, char b)
 // {

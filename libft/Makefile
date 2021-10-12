@@ -71,8 +71,7 @@ ft_print_char.c \
 ft_print_hex.c \
 ft_print_point.c \
 ft_hex_format.c \
-ft_utoa.c \
-ft_int_array_size.c 
+ft_utoa.c 
 
 
 OBJ		= 	$(SRC:.c=.o)

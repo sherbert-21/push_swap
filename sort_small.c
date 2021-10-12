@@ -12,38 +12,38 @@
 
 #include "./push_swap.h"
 
-static void     sort_three(int *a)
-{
-    if (a[0] > a[2])
-    {
-        ft_printf("%sra\n");
-        if  (a[2] > a[1])
-            ft_printf("%sa\n");
-    }
-    else if (a[0] > a[1])
-    {
-        if (a[0] > a[2])
-        {
-            ft_printf("%sra\n");
-            if  (a[2] > a[1])
-                ft_printf("%sa\n");
-        }
-        else
-            ft_printf("%sa\n");
+// static void     sort_three(int *a)
+// {
+//     if (a[0] > a[2])
+//     {
+//         ft_printf("%sra\n");
+//         if  (a[2] > a[1])
+//             ft_printf("%sa\n");
+//     }
+//     else if (a[0] > a[1])
+//     {
+//         if (a[0] > a[2])
+//         {
+//             ft_printf("%sra\n");
+//             if  (a[2] > a[1])
+//                 ft_printf("%sa\n");
+//         }
+//         else
+//             ft_printf("%sa\n");
             
-    }
-    else if (a[1] > a[2])
-    {
-        ft_printf("%sra\n");
-        if  (a[2] > a[0])
-            ft_printf("%sa\n");
-    }
-}
+//     }
+//     else if (a[1] > a[2])
+//     {
+//         ft_printf("%sra\n");
+//         if  (a[2] > a[0])
+//             ft_printf("%sa\n");
+//     }
+// }
 
-void		sort_small(int *a)
-{
-    if (ft_int_array_size(a) == 2)
-        ft_printf("%sa\n");
-    else
-        sort_three(a);     
-}
+// void		sort_small(int *a)
+// {
+//     if (ft_int_array_size(a) == 2)
+//         ft_printf("%sa\n");
+//     else
+//         sort_three(a);     
+// }
