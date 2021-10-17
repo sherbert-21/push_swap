@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 15:15:50 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/17 20:26:02 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,21 @@
 int		main(int argc, char **argv)
 {
 	int *a;
-	int i;
+	int size;
 
 	a = NULL;
-	i = 0;
+	size = 0;
 	if (argc < 2)
 		return (err());
 	else
 	{
-		while (++i != argc)
-			if(checker(argv[i]))
+		while (++size != argc)
+			if(checker(argv[size]))
 				return (err());
-		a = array_calloc_and_add(a, argc, argv);
-		if(double_check(a, argc, argv))
+		size = array_size(argc, argv);
+		a = array_calloc_and_add(a, size, argc, argv);
+		if(double_check(a, size))
 			return(err());
-		for (i = 0; i < 3; i++)
-			ft_printf("%d", a[i]);
 		return (0);
 	}
 }

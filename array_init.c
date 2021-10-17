@@ -6,13 +6,13 @@
 /*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 19:10:36 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/17 19:10:39 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/17 20:26:42 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int		array_size(const char *str)
+static int		array_size_one(const char *str)
 {
 	int i;
 
@@ -28,14 +28,22 @@ int		array_size(const char *str)
 	return (i);
 }
 
-int		*array_calloc_and_add(int *a, int argc, const char **argv)
+int		array_size(int argc, char **argv)
+{
+	if (argc > 2)
+		return (argc - 1);
+	else 
+		return (array_size_one(argv[1]));
+}
+
+int		*array_calloc_and_add(int *a, int size, int argc, char **argv)
 {
 	int	i;
 
 	i = -1;
 	if(argc == 2)
 	{
-		if (!(a = ft_calloc_int(array_size(argv[1]) + 1)))
+		if (!(a = ft_calloc_int(size + 1)))
 			return (NULL);
 		while (*argv[1])
 		{
@@ -49,9 +57,9 @@ int		*array_calloc_and_add(int *a, int argc, const char **argv)
 	}
 	else
 	{
-		if (!(a = ft_calloc_int(argc)))
+		if (!(a = ft_calloc_int(size + 1)))
 			return(NULL);
-		while (++i < argc - 1)
+		while (++i < size)
 			a[i] = ft_atoi(argv[i + 1]);
 	}
 	return(a);

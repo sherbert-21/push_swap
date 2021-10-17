@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 15:25:52 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/17 20:24:46 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,17 +93,12 @@ int			checker(const char *str)
 	return (0);
 }
 
-int		double_check(int *a, int argc, const char *argv)
+int		double_check(int *a, int size)
 {
 	int i;
 	int j;
-	int size;
 
 	i = -1;
-	if (argc > 2)
-		size = argc;
-	else
-		size = array_size(argv[1]);
 	while (++i < size - 1)
 	{
 		j = i;
