@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/10 10:46:59 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 13:48:32 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/17 21:11:23 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ int    err(void)
     return (0);
 }
 
+int     is_sorted_print(void)
+{
+    ft_printf("\n");
+    return (0);
+}
 // void    print_commands(char a, char b)
 // {
     
