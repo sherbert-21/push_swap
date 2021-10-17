@@ -1,43 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/03 17:05:33 by sherbert          #+#    #+#             */
-/*   Updated: 2020/05/03 17:05:38 by sherbert         ###   ########.fr       */
+/*   Created: 2021/10/17 19:10:46 by sherbert          #+#    #+#             */
+/*   Updated: 2021/10/17 19:10:47 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t len)
+char			*ft_strcpy(char *dest, char *src)
 {
-	size_t	i;
-	char	*str;
+	int			i;
 
 	i = 0;
-	str = (char*)s;
-	while (i < len)
+	while (src[i] != '\0')
 	{
-		*str = '\0';
+		dest[i] = src[i];
 		i++;
-		str++;
 	}
-}
-
-void	ft_bzero_int(void *s, size_t len)
-{
-	size_t	i;
-	int		*a;
-
-	i = 0;
-	a = (int*)s;
-	while (i < len)
-	{
-		*a = 0;
-		i++;
-		a++;
-	}
+	dest[i] = '\0';
+	return (dest);
 }

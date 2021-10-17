@@ -1,43 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_save_free.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/03 17:05:33 by sherbert          #+#    #+#             */
-/*   Updated: 2020/05/03 17:05:38 by sherbert         ###   ########.fr       */
+/*   Created: 2021/10/17 19:10:27 by sherbert          #+#    #+#             */
+/*   Updated: 2021/10/17 19:10:30 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t len)
+void			save_free(char **str)
 {
-	size_t	i;
-	char	*str;
-
-	i = 0;
-	str = (char*)s;
-	while (i < len)
+	if (str && *str)
 	{
-		*str = '\0';
-		i++;
-		str++;
+		free(*str);
+		*str = NULL;
 	}
 }
 
-void	ft_bzero_int(void *s, size_t len)
+void			save_free_int(int **str)
 {
-	size_t	i;
-	int		*a;
-
-	i = 0;
-	a = (int*)s;
-	while (i < len)
+	if (str && *str)
 	{
-		*a = 0;
-		i++;
-		a++;
+		free(*str);
+		*str = NULL;
 	}
 }

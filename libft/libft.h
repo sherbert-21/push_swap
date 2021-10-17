@@ -96,12 +96,14 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void*),
 								void (*del)(void*));
 
 void				save_free(char **str);
+void				save_free_int(int **str);
 char				*ft_strdup_gnl(char *s1, int *err);
 char				*ft_strjoin_gnl(char *s1, char *s2, int *err);
 char				*ft_strcpy(char *dest, char *src);
 int					get_next_line(int fd, char **line);
 
-int     			ft_int_array_size(int *a);;
+void				*ft_calloc_int(size_t nmemb);
+void				ft_bzero_int(void *s, size_t len);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10

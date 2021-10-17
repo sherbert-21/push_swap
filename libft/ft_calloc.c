@@ -21,3 +21,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(str, nmemb * size);
 	return (str);
 }
+
+void	*ft_calloc_int(size_t nmemb)
+{
+	int	*a;
+
+	if (!(a = (int*)malloc(nmemb * sizeof(int))))
+		return (NULL);
+	ft_bzero_int(a, nmemb * sizeof(int));
+	return (a);
+}

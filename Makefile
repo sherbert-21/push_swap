@@ -19,6 +19,7 @@ HEAD = push_swap.h
 SRC = \
 	push_swap.c \
 	checker.c \
+	array_init.c \
 	sort_small.c \
 	commands.c \
 	print.c
