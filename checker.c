@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/17 20:24:46 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/18 19:23:24 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,19 +93,19 @@ int			checker(const char *str)
 	return (0);
 }
 
-int		double_check(int *a, int size)
+int		double_check(t_data *data_a)
 {
 	int i;
 	int j;
 
 	i = -1;
-	while (++i < size - 1)
+	while (++i < data_a->size - 1)
 	{
 		j = i;
-		while (++j < size)
-			if (a[i] == a[j])
+		while (++j < data_a->size)
+			if (data_a->a[i] == data_a->a[j])
 			{
-				save_free_int(&a);
+				// save_free_int(&a);
 				return (1);
 			}
 	}
