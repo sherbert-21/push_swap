@@ -6,11 +6,22 @@
 /*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 19:10:36 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/18 19:11:57 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/18 20:56:56 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
+
+int		is_sorted(t_data *data_a)
+{
+	int i;
+
+	i = -1;
+	while (++i < data_a->size - 1)
+		if (data_a->a[i] > data_a->a[i + 1])
+			return (0);
+	return (1);
+}
 
 static int		array_size_one(const char *str)
 {

@@ -1,4 +1,3 @@
-./libft/.
-./libft/..
-./.
-./..
+./libft/*.o
+./*.o
+./libft/*.a

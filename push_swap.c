@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/18 19:23:47 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/20 17:40:48 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,11 @@ int		main(int argc, char **argv)
 			return(err());
 		if (is_sorted(data_a))
 			return(is_sorted_print());
-		// else
-		// {
-		// 	if (size < 4)
-		// 		a = sort_small(a, size);
-		// 		for (size = 0; size < 3; size++)
-		// 			ft_printf("---%d\t", a[size]);
-		// }
+		else
+		{
+			if (data_a->size < 4)
+				data_a->a = sort_small(data_a);
+		}
 		return (0);
 	}
 }

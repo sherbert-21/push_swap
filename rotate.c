@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/10 10:46:59 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/18 19:57:26 by sherbert         ###   ########.fr       */
+/*   Created: 2021/10/18 19:37:15 by sherbert          #+#    #+#             */
+/*   Updated: 2021/10/20 17:36:22 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./push_swap.h"
+#include "push_swap.h"
 
-int    err(void)
+int		*rotate(t_data *data)
 {
-    ft_printf("Error\n");
-    return (0);
+	int	first;
+	int i;
+
+	first = data->a[0];
+	i = -1;
+	while (++i < data->size - 1)
+		data->a[i] = data->a[i + 1];
+	data->a[data->size - 1] = first;
+	return(data->a);
 }
 
-int     is_sorted_print(void)
+int		*reverse_rotate(t_data *data)
 {
-    ft_printf("\n");
-    return (0);
-}
+	int	last;
+	int i;
 
-t_data  *err_data(void)
-{
-    ft_printf("Error_init\n");
-    return (NULL);
+	last = data->a[data->size - 1];
+	i = data->size;
+	while (--i > 0)
+		data->a[i] = data->a[i - 1];
+	data->a[0] = last;
+	return(data->a);
 }
-// void    print_commands(char a, char b)
-// {
-    
-// }

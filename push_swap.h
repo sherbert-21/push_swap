@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/18 19:21:26 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/20 17:21:52 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 # define PUSH_SWAP_H
 # include "./libft/libft.h"
 
+#include	<stdio.h>
+
 typedef struct		s_data
 {
 	int				*a;
 	int				size;
 }					t_data;
 
-// int					*sort_small(int *a, int size);
-// void				s_commands(char c, int **a, int **b, char prnt);
-// void				p_commands(char c, int **a, int **b, char prnt);
-// void				r_commands(char c, int **a, int **b, char prnt);
-// void				rr_commands(char c, int **a, int **b, char prnt);
+int					*sort_small(t_data *data_a);
+void				s_commands(char c, t_data *data_a, t_data *data_b, char prnt);
+// void				p_commands(char c, t_data *data_a, t_data *data_b, char prnt);
+void				r_commands(char c, t_data *data_a, t_data *data_b, char prnt);
+int*				rotate(t_data *data);
+void				rr_commands(char c, t_data *data_a, t_data *data_b, char prnt);
+int*				reverse_rotate(t_data *data);
 int					checker(const char *str);
 int					*array_calloc_and_add(t_data *data_a, int argc, char **argv);
 int					array_size(int argc, char **argv);
