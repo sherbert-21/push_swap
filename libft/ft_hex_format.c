@@ -6,13 +6,13 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 02:00:10 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/10 14:44:40 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:52:19 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		ft_dec_to_hex(unsigned int i)
+static char	ft_dec_to_hex(unsigned int i)
 {
 	if (i >= 0 && i <= 9)
 		return (i + '0');
@@ -30,7 +30,7 @@ static char		ft_dec_to_hex(unsigned int i)
 		return ('f');
 }
 
-void			ft_hex_format(size_t i, char c)
+void	ft_hex_format(size_t i, char c)
 {
 	if (i > 15)
 		ft_hex_format(i / 16, c);
@@ -40,7 +40,7 @@ void			ft_hex_format(size_t i, char c)
 		ft_putchar_fd((char)ft_toupper(ft_dec_to_hex(i % 16)), 1);
 }
 
-int				ft_hex_len(unsigned int i)
+int	ft_hex_len(unsigned int i)
 {
 	int				k;
 	unsigned int	hex;

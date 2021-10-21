@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru>   +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/29 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2020/04/29 19:16:36 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:48:51 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_overflow(const char *str, int i, int sign)
 {
-	int k;
-	int j;
+	int	k;
+	int	j;
 
 	k = 0;
 	j = i;
@@ -38,10 +38,10 @@ static int	ft_overflow(const char *str, int i, int sign)
 	return (1);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int	nbr;
-	int i;
+	int	i;
 	int	sign;
 
 	i = 0;

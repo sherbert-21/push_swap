@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/20 17:40:48 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/21 18:50:00 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int		main(int argc, char **argv)
 			if (data_a->size < 4)
 				data_a->a = sort_small(data_a);
 		}
+		for (i = 0; i < data_a->size; i++)
+			ft_printf("--%d\t", data_a->a[i]);
 		return (0);
 	}
 }
