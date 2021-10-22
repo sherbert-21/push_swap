@@ -6,13 +6,13 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 22:48:15 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:58:25 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:06:33 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_flag		ft_format(const char *str, t_flag flags)
+static t_flag	ft_format(const char *str, t_flag flags)
 {
 	while (!ft_isalpha(*str) && *str && *str != '%')
 	{
@@ -39,7 +39,7 @@ static t_flag		ft_format(const char *str, t_flag flags)
 	return (flags);
 }
 
-t_flag				ft_stars(int i, t_flag flags)
+t_flag	ft_stars(int i, t_flag flags)
 {
 	if (flags.star != 2)
 	{
@@ -62,9 +62,9 @@ t_flag				ft_stars(int i, t_flag flags)
 	return (flags);
 }
 
-t_flag				ft_flags_std(const char *str)
+t_flag	ft_flags_std(const char *str)
 {
-	t_flag flags;
+	t_flag	flags;
 
 	flags.width = 0;
 	flags.sign = 1;
@@ -76,9 +76,9 @@ t_flag				ft_flags_std(const char *str)
 	return (flags);
 }
 
-void				ft_print_flags(t_flag flags, int len)
+void	ft_print_flags(t_flag flags, int len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (flags.width > 0)

@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 17:21:05 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:57:45 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:05:46 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*str;
 	size_t	i;
 
-	dst = (char*)dest;
-	str = (char*)src;
+	dst = (char *)dest;
+	str = (char *)src;
 	i = 0;
 	if (!dest && !src)
 		return (NULL);

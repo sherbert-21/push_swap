@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/18 23:36:29 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:56:41 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:02:49 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *old;
+	t_list	*old;
 
 	while (*lst)
 	{

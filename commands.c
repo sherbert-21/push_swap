@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 12:48:01 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:50:13 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 11:18:20 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@
 //ok
 void	s_commands(char c, t_data *data_a, t_data *data_b, char prnt)
 {
-	int num;
+	int	num;
 
 	if (c == 'a' && data_a->a && data_a->a[1])
 	{

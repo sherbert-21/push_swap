@@ -6,26 +6,25 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/23 14:03:58 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:58:49 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 09:58:01 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			ft_ok(char c)
+static int	ft_ok(char c)
 {
 	return ((int)ft_strchr("cCsSpPdDiIuUxX%*", c) || ft_isdigit(c));
 }
 
-static int			ft_read(char c)
+static int	ft_read(char c)
 {
 	return ((int)ft_strchr("cCsSpPdDiIuUxX%", c));
 }
 
-static int			ft_conv_case(const char str, va_list list,
-										t_flag flags)
+static int	ft_conv_case(const char str, va_list list, t_flag flags)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (str == '%')
@@ -45,24 +44,24 @@ static int			ft_conv_case(const char str, va_list list,
 	return (i);
 }
 
-static int			ft_print(const char *s, va_list list, t_flag flags, int i)
+static int	ft_print(const char *s, va_list list, t_flag flags, int i)
 {
 	while (*s != '\0')
 	{
 		if (*s == '%')
 		{
-			while (ft_ok(*s) && !(*(s - 1) == '%' && *(s - 2) == '%' &&
-					*s != '%') && *s && !(ft_read(*(s - 1)) && *s != '%'))
+			while (ft_ok(*s) && !(*(s - 1) == '%' && *(s - 2) == '%'
+					&& *s != '%') && *s && !(ft_read(*(s - 1)) && *s != '%'))
 			{
-				s = (*(s - 1) != '*' && *s == '%') ? s + 1 : s;
-				flags = (*(s - 1) == '%') ? ft_flags_std(s) : flags;
+				s = s_init_one(s);
+				flags = flags_init(flags, s);
 				while (!(ft_read(*s) || *s == '*'))
 					s++;
 				if (flags.star != 0 && *s++)
 					flags = ft_stars(va_arg(list, int), flags);
 				else
 					i += ft_conv_case(*s++, list, flags);
-				s = (*s == '.' && *(s - 1) == '*') ? s + 1 : s;
+				s = s_init_two(s);
 			}
 		}
 		while (*s != '\0' && *s != '%')
@@ -74,7 +73,7 @@ static int			ft_print(const char *s, va_list list, t_flag flags, int i)
 	return (i);
 }
 
-int					ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list		arg;
 	t_flag		flags;

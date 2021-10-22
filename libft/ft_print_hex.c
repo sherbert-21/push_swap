@@ -6,13 +6,13 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 11:10:11 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:58:28 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:06:55 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_flag		ft_flags_length(t_flag flags, int len, unsigned int i)
+static t_flag	ft_flags_length(t_flag flags, int len, unsigned int i)
 {
 	if (flags.width < len && flags.width)
 		flags.width = len;
@@ -21,7 +21,7 @@ static t_flag		ft_flags_length(t_flag flags, int len, unsigned int i)
 	return (flags);
 }
 
-static int			ft_no_dot(unsigned int i, t_flag flags, int len, char c)
+static int	ft_no_dot(unsigned int i, t_flag flags, int len, char c)
 {
 	if (flags.width != 0 && flags.sign == 1)
 		ft_print_flags(flags, len);
@@ -33,9 +33,9 @@ static int			ft_no_dot(unsigned int i, t_flag flags, int len, char c)
 	return (len);
 }
 
-static int			ft_dot(unsigned int i, t_flag flags, int len, char c)
+static int	ft_dot(unsigned int i, t_flag flags, int len, char c)
 {
-	int k;
+	int	k;
 
 	k = 0;
 	flags.c = ' ';
@@ -52,9 +52,9 @@ static int			ft_dot(unsigned int i, t_flag flags, int len, char c)
 	return (flags.len);
 }
 
-int					ft_print_hex(unsigned int i, t_flag flags, char c)
+int	ft_print_hex(unsigned int i, t_flag flags, char c)
 {
-	int len;
+	int	len;
 
 	len = ft_hex_len(i);
 	flags = ft_flags_length(flags, len, i);

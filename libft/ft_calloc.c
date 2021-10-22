@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 19:54:30 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 19:50:29 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:00:41 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*str;
 
-	str = (char*)malloc(nmemb * size);
+	str = (char *)malloc(nmemb * size);
 	if (!str)
 		return (NULL);
 	ft_bzero(str, nmemb * size);
@@ -27,7 +27,7 @@ void	*ft_calloc_int(size_t nmemb)
 {
 	int	*a;
 
-	a = (int*)malloc(nmemb * sizeof(int));
+	a = (int *)malloc(nmemb * sizeof(int));
 	if (!a)
 		return (NULL);
 	ft_bzero_int(a, nmemb * sizeof(int));

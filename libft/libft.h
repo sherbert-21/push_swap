@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 16:10:45 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 19:01:45 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 11:06:45 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 # include <sys/stat.h>
 # include <stdarg.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
 
-typedef struct		s_flag
+typedef struct s_flag
 {
 	int				width;
 	int				sign;
@@ -93,7 +93,11 @@ void				ft_lstdelone(t_list *lst, void (*del)(void*));
 void				ft_lstclear(t_list **lst, void (*del)(void*));
 void				ft_lstiter(t_list *lst, void (*f)(void*));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void*),
-								void (*del)(void*));
+						void (*del)(void*));
+t_flag				flags_init(t_flag flags, const char *s);
+const char			*s_init_one(const char *s);
+const char			*s_init_two(const char *s);
+int					ft_return(int ret);
 
 void				save_free(char **str);
 void				save_free_int(int **str);

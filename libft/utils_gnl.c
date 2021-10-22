@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 23:25:45 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 19:11:44 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:39:09 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,11 @@ char	*ft_strjoin_gnl(char *s1, char *s2, int *ret)
 		str[i++] = *s2++;
 	str[i] = '\0';
 	return (str);
+}
+
+int	ft_return(int ret)
+{
+	if (ret >= 1)
+		return (1);
+	return (ret);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+         #
+#    By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/07 19:44:28 by sherbert          #+#    #+#              #
-#    Updated: 2021/10/17 20:00:08 by sherbert         ###   ########.fr        #
+#    Updated: 2021/10/22 09:51:52 by sherbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,8 @@ ft_print_point.c \
 ft_hex_format.c \
 ft_utoa.c \
 ft_save_free.c \
-ft_strcpy.c
+ft_strcpy.c \
+ft_printf_add.c
 
 
 OBJ		= 	$(SRC:.c=.o)

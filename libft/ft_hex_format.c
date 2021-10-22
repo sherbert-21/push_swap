@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 02:00:10 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 19:52:19 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:00:33 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_hex_len(unsigned int i)
 	return (k);
 }
 
-int				ft_point_len(size_t i)
+int	ft_point_len(size_t i)
 {
 	int		k;
 	size_t	hex;

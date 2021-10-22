@@ -6,13 +6,13 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/11 03:39:37 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:58:45 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:09:04 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_flag		ft_flags_length(t_flag flags, int len, char *n)
+static t_flag	ft_flags_length(t_flag flags, int len, char *n)
 {
 	if (flags.width < len && flags.width)
 		flags.width = len;
@@ -21,7 +21,7 @@ static t_flag		ft_flags_length(t_flag flags, int len, char *n)
 	return (flags);
 }
 
-static int			ft_no_dot(char *n, t_flag flags, int len)
+static int	ft_no_dot(char *n, t_flag flags, int len)
 {
 	if (flags.width != 0 && flags.sign == 1)
 		ft_print_flags(flags, len);
@@ -33,9 +33,9 @@ static int			ft_no_dot(char *n, t_flag flags, int len)
 	return (len);
 }
 
-static int			ft_dot(char *n, t_flag flags, int len)
+static int	ft_dot(char *n, t_flag flags, int len)
 {
-	int		k;
+	int	k;
 
 	k = 0;
 	flags.c = ' ';
@@ -52,7 +52,7 @@ static int			ft_dot(char *n, t_flag flags, int len)
 	return (flags.len);
 }
 
-int					ft_print_unsign(unsigned int i, t_flag flags)
+int	ft_print_unsign(unsigned int i, t_flag flags)
 {
 	int		len;
 	char	*nbr;

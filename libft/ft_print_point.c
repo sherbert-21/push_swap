@@ -6,13 +6,13 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 02:00:20 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:58:37 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:07:51 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_flag		ft_flags_length(t_flag flags, int len, size_t i)
+static t_flag	ft_flags_length(t_flag flags, int len, size_t i)
 {
 	if (flags.width < len && flags.width)
 		flags.width = len;
@@ -21,7 +21,7 @@ static t_flag		ft_flags_length(t_flag flags, int len, size_t i)
 	return (flags);
 }
 
-static int			ft_no_dot(size_t i, t_flag flags, int len)
+static int	ft_no_dot(size_t i, t_flag flags, int len)
 {
 	if (flags.width != 0 && flags.sign == 1)
 		ft_print_flags(flags, len);
@@ -36,9 +36,9 @@ static int			ft_no_dot(size_t i, t_flag flags, int len)
 	return (len);
 }
 
-static int			ft_dot(size_t i, t_flag flags, int len)
+static int	ft_dot(size_t i, t_flag flags, int len)
 {
-	int k;
+	int	k;
 
 	k = 0;
 	flags.c = ' ';
@@ -56,9 +56,9 @@ static int			ft_dot(size_t i, t_flag flags, int len)
 	return (flags.len);
 }
 
-int					ft_print_point(size_t i, t_flag flags)
+int	ft_print_point(size_t i, t_flag flags)
 {
-	int len;
+	int	len;
 
 	len = ft_point_len(i) + 2;
 	flags = ft_flags_length(flags, len, i);

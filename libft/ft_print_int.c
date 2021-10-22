@@ -6,13 +6,13 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 19:52:33 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:58:32 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:07:18 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_flag		ft_flags_length(int i, t_flag flags, int len, char *str)
+static t_flag	ft_flags_length(int i, t_flag flags, int len, char *str)
 {
 	if (flags.width < len && flags.width)
 		flags.width = len;
@@ -23,7 +23,7 @@ static t_flag		ft_flags_length(int i, t_flag flags, int len, char *str)
 	return (flags);
 }
 
-static int			ft_no_dot(char *str, t_flag flags, int len)
+static int	ft_no_dot(char *str, t_flag flags, int len)
 {
 	if (*str == '-' && flags.c == '0')
 	{
@@ -40,7 +40,7 @@ static int			ft_no_dot(char *str, t_flag flags, int len)
 	return (len);
 }
 
-static int			ft_dot(char *str, t_flag flags, int len)
+static int	ft_dot(char *str, t_flag flags, int len)
 {
 	int		k;
 
@@ -64,7 +64,7 @@ static int			ft_dot(char *str, t_flag flags, int len)
 	return (flags.len);
 }
 
-int					ft_print_nbr(int i, t_flag flags)
+int	ft_print_nbr(int i, t_flag flags)
 {
 	int		len;
 	char	*nbr;

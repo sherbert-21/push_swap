@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 16:14:44 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 20:02:09 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:40:16 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 static void	error_case(char **s_buf, char **line, int *ret)
 {
-	save_free(s_buf);
-	if (*ret == -1)
-		save_free(line);
+	if (ret == 0 || ret == -1)
+	{
+		save_free(s_buf);
+		if (*ret == -1)
+			save_free(line);
+	}
 }
 
 static char	*save_buf(char **s_buf, char **line, int *ret)
@@ -41,6 +44,20 @@ static char	*save_buf(char **s_buf, char **line, int *ret)
 	return (n);
 }
 
+static int	init_ret(char **line, int fd, int ret)
+{
+	if (fd < 0 || BUFFER_SIZE < 1 || !line)
+		return (-1);
+	return (0);
+}
+
+static int	init_n(int ret, char *n, char *s_buf, char **line)
+{
+	if (!ret)
+		return (save_buf(&s_buf, line, &ret));
+	return (NULL);
+}
+
 int	get_next_line(int fd, char **line)
 {
 	char		buf[BUFFER_SIZE + 1];
@@ -49,15 +66,8 @@ int	get_next_line(int fd, char **line)
 	char		*tmp;
 	int			ret;
 
-	if (fd < 0 || BUFFER_SIZE < 1 || !line)
-		ret = -1;
-	else
-		ret = 0;
-	if (!ret)
-		n = save_buf(&s_buf, line, &ret);
-	else
-		n = NULL;
-	ret = read(fd, buf, BUFFER_SIZE);
+	ret = init_ret(line, fd, ret);
+	n = init_n(ret, n, s_buf, line);
 	while (!n && ret != -1 && ret > 0)
 	{
 		buf[ret] = '\0';
@@ -73,9 +83,6 @@ int	get_next_line(int fd, char **line)
 		save_free(&tmp);
 		ret = read(fd, buf, BUFFER_SIZE);
 	}
-	if (ret == 0 || ret == -1)
-		error_case(&s_buf, line, &ret);
-	if (ret >= 1)
-		return (1);
-	return (ret);
+	error_case(&s_buf, line, &ret);
+	return (ft_return(ret));
 }

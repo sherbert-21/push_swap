@@ -6,13 +6,13 @@
 /*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 20:01:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 18:58:41 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/22 10:08:12 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_no_dot(char *s, t_flag flags, int len)
+static int	ft_no_dot(char *s, t_flag flags, int len)
 {
 	if (flags.width != 0 && flags.sign == 1)
 		ft_print_flags(flags, len);
@@ -24,9 +24,9 @@ static int		ft_no_dot(char *s, t_flag flags, int len)
 	return (len);
 }
 
-static int		ft_dot(char *s, t_flag flags, int len)
+static int	ft_dot(char *s, t_flag flags, int len)
 {
-	char *str;
+	char	*str;
 
 	if (len >= flags.len && flags.len >= 0)
 		len = flags.len;
@@ -41,9 +41,9 @@ static int		ft_dot(char *s, t_flag flags, int len)
 	return (len);
 }
 
-int				ft_print_str(char *s, t_flag flags)
+int	ft_print_str(char *s, t_flag flags)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (s == NULL)
