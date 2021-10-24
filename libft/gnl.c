@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gnl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 16:14:44 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/22 10:40:16 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/24 15:11:53 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	error_case(char **s_buf, char **line, int *ret)
 {
-	if (ret == 0 || ret == -1)
+	if (*ret == 0 || *ret == -1)
 	{
 		save_free(s_buf);
 		if (*ret == -1)
@@ -47,15 +47,19 @@ static char	*save_buf(char **s_buf, char **line, int *ret)
 static int	init_ret(char **line, int fd, int ret)
 {
 	if (fd < 0 || BUFFER_SIZE < 1 || !line)
-		return (-1);
-	return (0);
+		ret = -1;
+	else
+		ret = 0;
+	return (ret);
 }
 
-static int	init_n(int ret, char *n, char *s_buf, char **line)
+static char	*init_n(int ret, char *n, char *s_buf, char **line)
 {
 	if (!ret)
-		return (save_buf(&s_buf, line, &ret));
-	return (NULL);
+		n = save_buf(&s_buf, line, &ret);
+	else
+		n = NULL;
+	return (n);
 }
 
 int	get_next_line(int fd, char **line)
@@ -66,6 +70,7 @@ int	get_next_line(int fd, char **line)
 	char		*tmp;
 	int			ret;
 
+	init_value(&ret, &n);
 	ret = init_ret(line, fd, ret);
 	n = init_n(ret, n, s_buf, line);
 	while (!n && ret != -1 && ret > 0)
@@ -75,8 +80,7 @@ int	get_next_line(int fd, char **line)
 		if (n)
 		{
 			n++;
-			save_free(&s_buf);
-			s_buf = ft_strdup_gnl(n, &ret);
+			s_buf = new_s_buf(s_buf, n, &ret);
 		}
 		tmp = *line;
 		*line = ft_strjoin_gnl(*line, buf, &ret);

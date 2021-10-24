@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_gnl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/26 23:25:45 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/22 10:39:09 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/24 15:12:55 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,17 @@ int	ft_return(int ret)
 	if (ret >= 1)
 		return (1);
 	return (ret);
+}
+
+char *new_s_buf(char *s_buf, char *n, int *ret)
+{
+	save_free(&s_buf);
+	s_buf = ft_strdup_gnl(n, ret);
+	return (s_buf);
+}
+
+void	init_value(int *ret, char **n)
+{
+	ret = 0;
+	*n = NULL;
 }

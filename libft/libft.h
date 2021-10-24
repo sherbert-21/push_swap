@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 16:10:45 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/22 11:06:45 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/24 15:13:06 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void*),
 t_flag				flags_init(t_flag flags, const char *s);
 const char			*s_init_one(const char *s);
 const char			*s_init_two(const char *s);
-int					ft_return(int ret);
 
 void				save_free(char **str);
 void				save_free_int(int **str);
@@ -105,6 +104,9 @@ char				*ft_strdup_gnl(char *s1, int *err);
 char				*ft_strjoin_gnl(char *s1, char *s2, int *err);
 char				*ft_strcpy(char *dest, char *src);
 int					get_next_line(int fd, char **line);
+char 				*new_s_buf(char *s_buf, char *n, int *ret);
+int					ft_return(int ret);
+void				init_value(int *ret, char **n);
 
 void				*ft_calloc_int(size_t nmemb);
 void				ft_bzero_int(void *s, size_t len);
