@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   array_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 19:10:36 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/22 11:26:15 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/24 16:31:06 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	is_sorted(t_data *data_a)
 	int	i;
 
 	i = -1;
-	while (++i < data_a->size - 1)
+	while (++i < data_a->size_max - 1)
 		if (data_a->a[i] > data_a->a[i + 1])
 			return (0);
 	return (1);
@@ -52,7 +52,7 @@ int	*array_calloc_and_add(t_data *data_a, int argc, char **argv)
 	int	i;
 
 	i = -1;
-	data_a->a = ft_calloc_int(data_a->size + 1);
+	data_a->a = ft_calloc_int(data_a->size_max + 1);
 	if (!data_a->a)
 		return (NULL);
 	if (argc == 2)
@@ -69,7 +69,7 @@ int	*array_calloc_and_add(t_data *data_a, int argc, char **argv)
 	}
 	else
 	{
-		while (++i < data_a->size)
+		while (++i < data_a->size_max)
 			data_a->a[i] = ft_atoi(argv[i + 1]);
 	}
 	return (data_a->a);

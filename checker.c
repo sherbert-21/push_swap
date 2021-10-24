@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:16:32 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/22 11:22:16 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/24 16:30:31 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,10 @@ int	double_check(t_data *data_a)
 	int	j;
 
 	i = -1;
-	while (++i < data_a->size - 1)
+	while (++i < data_a->size_max - 1)
 	{
 		j = i;
-		while (++j < data_a->size)
+		while (++j < data_a->size_max)
 			if (data_a->a[i] == data_a->a[j])
 			{
 				// save_free_int(&a);
