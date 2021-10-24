@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 11:41:43 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/24 16:31:20 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/10/24 19:05:36 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ int	*sort_small(t_data *data)
 		s_commands('a', data,'Y');
 	else if (data->size_max == 3)
 		return (sort_three(data));
-    // else if (data->size_max = 4)
-    //     return (sort_four(data));
+    else if (data->size_max == 4)
+        return (sort_four(data));
     // else
     //     return (sort_five(data));
 	return (data->a);

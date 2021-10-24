@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+         #
+#    By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/30 23:25:58 by sherbert          #+#    #+#              #
-#    Updated: 2021/10/18 21:22:47 by sherbert         ###   ########.fr        #
+#    Updated: 2021/10/24 19:06:17 by sherbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,11 @@ SRC = \
 	checker.c \
 	array_init.c \
 	sort_small.c \
+	sort_small_four.c \
 	commands.c \
 	print.c \
-	rotate.c
+	rotate.c \
+	sort_min_max.c
 
 OBJ		= 	$(SRC:.c=.o)
 
