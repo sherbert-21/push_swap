@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 17:05:33 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/21 19:49:12 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/12/09 02:38:07 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,5 @@ void	ft_bzero(void *s, size_t len)
 		*str = '\0';
 		i++;
 		str++;
-	}
-}
-
-void	ft_bzero_int(void *s, size_t len)
-{
-	size_t	i;
-	int		*a;
-
-	i = 0;
-	a = (int *)s;
-	while (i < len)
-	{
-		*a = 0;
-		i++;
-		a++;
 	}
 }

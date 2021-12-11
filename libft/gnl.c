@@ -3,23 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   gnl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 16:14:44 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/24 15:11:53 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/11/22 18:28:17 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	error_case(char **s_buf, char **line, int *ret)
+static int	check_error_case(char **s_buf, char **line, int *ret)
 {
-	if (*ret == 0 || *ret == -1)
+	if (*ret <= 0)
 	{
 		save_free(s_buf);
 		if (*ret == -1)
 			save_free(line);
+		return (*ret);
 	}
+	return (1);
 }
 
 static char	*save_buf(char **s_buf, char **line, int *ret)
@@ -44,22 +46,18 @@ static char	*save_buf(char **s_buf, char **line, int *ret)
 	return (n);
 }
 
-static int	init_ret(char **line, int fd, int ret)
+static void	init_ret_n(int *ret, char **n, int fd, char **line)
 {
+	*n = NULL;
+	*ret = 0;
 	if (fd < 0 || BUFFER_SIZE < 1 || !line)
-		ret = -1;
-	else
-		ret = 0;
-	return (ret);
+		*ret = -1;
 }
 
-static char	*init_n(int ret, char *n, char *s_buf, char **line)
+static void	check_n(char **s_buf, char *n, int *ret)
 {
-	if (!ret)
-		n = save_buf(&s_buf, line, &ret);
-	else
-		n = NULL;
-	return (n);
+	save_free(s_buf);
+	*s_buf = ft_strdup_gnl(n, ret);
 }
 
 int	get_next_line(int fd, char **line)
@@ -70,23 +68,19 @@ int	get_next_line(int fd, char **line)
 	char		*tmp;
 	int			ret;
 
-	init_value(&ret, &n);
-	ret = init_ret(line, fd, ret);
-	n = init_n(ret, n, s_buf, line);
-	while (!n && ret != -1 && ret > 0)
+	init_ret_n(&ret, &n, fd, line);
+	if (!ret)
+		n = save_buf(&s_buf, line, &ret);
+	while (!n && ret > 0)
 	{
+		ret = read(fd, buf, BUFFER_SIZE);
 		buf[ret] = '\0';
 		n = ft_strchr(buf, '\n');
 		if (n)
-		{
-			n++;
-			s_buf = new_s_buf(s_buf, n, &ret);
-		}
+			check_n(&s_buf, ++n, &ret);
 		tmp = *line;
 		*line = ft_strjoin_gnl(*line, buf, &ret);
 		save_free(&tmp);
-		ret = read(fd, buf, BUFFER_SIZE);
 	}
-	error_case(&s_buf, line, &ret);
-	return (ft_return(ret));
+	return (check_error_case(&s_buf, line, &ret));
 }

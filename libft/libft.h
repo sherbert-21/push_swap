@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 16:10:45 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/24 15:13:06 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/12/09 06:14:11 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <stdarg.h>
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 typedef struct s_list
 {
@@ -98,20 +101,14 @@ t_flag				flags_init(t_flag flags, const char *s);
 const char			*s_init_one(const char *s);
 const char			*s_init_two(const char *s);
 
-void				save_free(char **str);
-void				save_free_int(int **str);
 char				*ft_strdup_gnl(char *s1, int *err);
 char				*ft_strjoin_gnl(char *s1, char *s2, int *err);
 char				*ft_strcpy(char *dest, char *src);
 int					get_next_line(int fd, char **line);
-char 				*new_s_buf(char *s_buf, char *n, int *ret);
-int					ft_return(int ret);
-void				init_value(int *ret, char **n);
 
-void				*ft_calloc_int(size_t nmemb);
-void				ft_bzero_int(void *s, size_t len);
+void				save_free(char **str);
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 1
 # endif
 #endif
