@@ -1,89 +1,84 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/23 14:03:58 by sherbert          #+#    #+#             */
-/*   Updated: 2021/10/22 09:58:01 by sherbert         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-static int	ft_ok(char c)
+t_flags		ft_init_flags(void)
 {
-	return ((int)ft_strchr("cCsSpPdDiIuUxX%*", c) || ft_isdigit(c));
+	t_flags		flags;
+
+	flags.dot = -1;
+	flags.minus = 0;
+	flags.star = 0;
+	flags.type = 0;
+	flags.width = 0;
+	flags.zero = 0;
+	return (flags);
 }
 
-static int	ft_read(char c)
+int			ft_flag_parse(const char *save, int i, t_flags *flags, va_list args)
 {
-	return ((int)ft_strchr("cCsSpPdDiIuUxX%", c));
-}
-
-static int	ft_conv_case(const char str, va_list list, t_flag flags)
-{
-	int	i;
-
-	i = 0;
-	if (str == '%')
-		i = ft_print_char('%', flags);
-	else if (str == 'i' || str == 'd' || str == 'D' || str == 'I')
-		i = ft_print_nbr(va_arg(list, int), flags);
-	else if (str == 'c' || str == 'C')
-		i = ft_print_char((char)va_arg(list, int), flags);
-	else if (str == 's' || str == 'S')
-		i = ft_print_str(va_arg(list, char *), flags);
-	else if (str == 'U' || str == 'u')
-		i = ft_print_unsign(va_arg(list, unsigned int), flags);
-	else if (str == 'x' || str == 'X')
-		i = ft_print_hex(va_arg(list, unsigned int), flags, str);
-	else if (str == 'p' || str == 'P')
-		i = ft_print_point(va_arg(list, size_t), flags);
-	return (i);
-}
-
-static int	ft_print(const char *s, va_list list, t_flag flags, int i)
-{
-	while (*s != '\0')
+	while (save[i])
 	{
-		if (*s == '%')
+		if (!ft_isdigit(save[i]) && !ft_is_in_type_list(save[i])
+		&& !ft_is_in_flags_list(save[i]))
+			break ;
+		if (save[i] == '0' && flags->width == 0 && flags->minus == 0)
+			flags->zero = 1;
+		if (save[i] == '.')
+			i = ft_flag_dot(save, i, flags, args);
+		if (save[i] == '-')
+			*flags = ft_flag_minus(*flags);
+		if (save[i] == '*')
+			*flags = ft_flag_width(args, *flags);
+		if (ft_isdigit(save[i]))
+			*flags = ft_flag_digit(save[i], *flags);
+		if (ft_is_in_type_list(save[i]))
 		{
-			while (ft_ok(*s) && !(*(s - 1) == '%' && *(s - 2) == '%'
-					&& *s != '%') && *s && !(ft_read(*(s - 1)) && *s != '%'))
-			{
-				s = s_init_one(s);
-				flags = flags_init(flags, s);
-				while (!(ft_read(*s) || *s == '*'))
-					s++;
-				if (flags.star != 0 && *s++)
-					flags = ft_stars(va_arg(list, int), flags);
-				else
-					i += ft_conv_case(*s++, list, flags);
-				s = s_init_two(s);
-			}
+			flags->type = save[i];
+			break ;
 		}
-		while (*s != '\0' && *s != '%')
-		{
-			ft_putchar_fd(*s++, 1);
-			i++;
-		}
+		i++;
 	}
 	return (i);
 }
 
-int	ft_printf(const char *str, ...)
+int			ft_treat_save(const char *save, va_list args)
 {
-	va_list		arg;
-	t_flag		flags;
 	int			i;
+	t_flags		flags;
+	int			char_count;
 
 	i = 0;
-	flags = ft_flags_std(str);
-	va_start(arg, str);
-	if (*str)
-		i = ft_print(str, arg, flags, i);
-	va_end(arg);
-	return (i);
+	char_count = 0;
+	while (1)
+	{
+		flags = ft_init_flags();
+		if (!save[i])
+			break ;
+		else if (save[i] == '%' && save[i + 1])
+		{
+			i = ft_flag_parse(save, ++i, &flags, args);
+			if (ft_is_in_type_list(save[i]))
+				char_count += ft_treatment((char)flags.type, flags, args);
+			else if (save[i])
+				char_count += ft_putchar(save[i]);
+		}
+		else if (save[i] != '%')
+			char_count += ft_putchar(save[i]);
+		i++;
+	}
+	return (char_count);
+}
+
+int			ft_printf(const char *input, ...)
+{
+	const char	*save;
+	va_list		args;
+	int			char_count;
+
+	save = ft_strdup(input);
+	char_count = 0;
+	va_start(args, input);
+	char_count += ft_treat_save(save, args);
+	va_end(args);
+	free((char *)save);
+	return (char_count);
 }

@@ -8,7 +8,10 @@ SRC = \
 	push_swap.c \
 	check.c \
 	print.c \
-	init_map.c
+	init_map.c \
+	sort.c \
+	sort_small.c \
+	commands.c
 
 OBJ		= 	$(SRC:.c=.o)
 
