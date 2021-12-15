@@ -17,8 +17,8 @@ void	sort(t_arr *a)
 {
 	if (is_sorted(a) == 1)
 		ft_printf("\n");
-	else if (a->len <= 5)
+	else if (a->len < 50)
 		sort_small(a);
 	else
-		ft_printf("\n");
+		sort_complex(a);
 }

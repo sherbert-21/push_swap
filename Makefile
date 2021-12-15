@@ -11,7 +11,11 @@ SRC = \
 	init_map.c \
 	sort.c \
 	sort_small.c \
-	commands.c
+	commands.c \
+	move_chunk.c \
+	complex.c \
+	min_max.c \
+	smart.c
 
 OBJ		= 	$(SRC:.c=.o)
 

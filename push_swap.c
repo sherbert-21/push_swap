@@ -11,7 +11,7 @@ static t_arr *init_arr(int argc)
 	a->a = ft_calloc(argc, sizeof(int));
 	a->len = argc - 1;
 	a->mid = 0;
-	a->chunks = 0;
+	a->chunks = a->len / 50 + 1;
 	return (a);
 }
 

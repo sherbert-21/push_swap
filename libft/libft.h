@@ -6,7 +6,7 @@
 /*   By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/30 16:10:45 by sherbert          #+#    #+#             */
-/*   Updated: 2021/12/13 20:01:18 by sherbert         ###   ########.fr       */
+/*   Updated: 2021/12/15 05:44:42 by sherbert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ int					get_next_line(int fd, char **line);
 void				save_free(char **str);
 
 void			check_int(int len, int *a);
+int	abs(int n);
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1

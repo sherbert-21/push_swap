@@ -6,7 +6,7 @@
 #    By: sherbert <sherbert@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/07 19:44:28 by sherbert          #+#    #+#              #
-#    Updated: 2021/12/13 20:02:07 by sherbert         ###   ########.fr        #
+#    Updated: 2021/12/15 05:42:42 by sherbert         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,8 @@ ft_treat_int.c \
 ft_treat_uint.c \
 ft_treat_percent.c \
 ft_treat_hexa.c \
-ft_treat_flags.c
+ft_treat_flags.c \
+abs.c
 
 
 OBJ		= 	$(SRC:.c=.o)

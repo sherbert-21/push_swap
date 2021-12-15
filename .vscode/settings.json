@@ -4,4 +4,7 @@
 	"files.insertFinalNewline": true,
 	"editor.insertSpaces": false,
 	"editor.tabSize": 4,
+	"files.associations": {
+		"min_max": "c"
+	},
 }

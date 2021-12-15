@@ -12,30 +12,29 @@ static void	s_command(t_arr *a)
 	}
 }
 
-static void r_command(t_arr *a)
+void	rr_command(t_arr *a)
 {
-	int	first;
+	int		i;
+	int		tmp;
+
+	i = a->len;
+	tmp = a->a[a->len - 1];
+	while (--i)
+		a->a[i] = a->a[i - 1];
+	a->a[0] = tmp;
+}
+
+void	r_command(t_arr *a)
+{
 	int	i;
+	int	tmp;
 
 	i = -1;
-	first = a->a[0];
+	tmp = a->a[0];
 	while (++i < a->len - 1)
-			a->a[i] = a->a[i + 1];
-	a->a[a->len - 1] = first;
+		a->a[i] = a->a[i + 1];
+	a->a[a->len - 1] = tmp;
 }
-
-static void rr_command(t_arr *a)
-{
-	int	last;
-	int	i;
-
-	last = a->a[a->len - 1];
-	i = a->len;
-	while (--i > 0)
-		a->a[i] = a->a[i - 1];
-	a->a[0] = last;
-}
-
 static void	p_command(t_arr *a, t_arr *b)
 {
 	int i;
