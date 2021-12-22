@@ -50,33 +50,6 @@ static void	sort_three(t_arr *a)
 		run(RRA, a, NULL, 1);
 }
 
-// static void	put_top_in_position(t_arr *a, t_arr *b)
-// {
-// 	int	top_b;
-// 	int	move;
-
-// 	check_int(a->len, a->a);
-// 	check_int(b->len, b->a);
-// 	top_b = b->a[b->len - 1];
-// 	move = n_above(a, top_b);
-// 	if (move == top_b)
-// 		move = min(a->a, a->len);
-// 	smart_rotate_a(a, move);
-// 	run(PA, a, b, 1);
-// }
-
-// static void	sort_more(t_arr *a)
-// {
-// 	t_arr *b;
-
-// 	b = init_arr_b(a->len + 1);
-// 	run(PB, a, b, a->len - 3);
-// 	sort_three(a);
-// 	while (b->len > 0)
-// 		put_top_in_position(a, b);
-// 	smart_rotate_a(a, 0);
-// }
-
 static void push_to_b(t_arr *a, t_arr *b)
 {
 	int		min;
@@ -87,18 +60,10 @@ static void push_to_b(t_arr *a, t_arr *b)
 	{
 		mid = (a->len - 1) / 2;
 		get_min_max(&min, &max, a);
-		ft_printf("%d, %d\n", a->a[min],  a->a[max]);
 		if (min != mid && abs(mid - min) > abs(mid - max))
-		{
-			ft_printf("1\n");
 			smart_rotate_a(a, a->a[min]);
-		}
 		else
-		{
-			ft_printf("2\n");
 			smart_rotate_a(a, a->a[max]);
-		}
-		check_int(a->len, a->a);
 		run(PB, a, b, 1);
 	}
 }
@@ -110,7 +75,6 @@ static void	sort_more(t_arr *a)
 
 	str = NULL;
 	b = init_arr_b(a->len + 1);
-	check_int(a->len, a->a);
 	push_to_b(a, b);
 	if (!(is_sorted(a)))
 		sort_three(a);

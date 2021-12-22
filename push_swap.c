@@ -39,6 +39,5 @@ int main(int argc, char **argv)
 	a = init_arr(argc);
 	init_map(argc, argv, a);
 	sort(a);
-	check_int(a->len, a->a);
 	return (0);
 }

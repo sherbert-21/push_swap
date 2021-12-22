@@ -35,14 +35,15 @@ int	n_above(t_arr *a, int n)
 	int	k;
 	int	i;
 
-	if (a->len < 1 || n > max(a->a, a->len))
+	if (a->len - 1 < 0 || n > max(a->a, a->len))
 		return (n);
-	i = -1;
+	i = 0;
 	k = max(a->a, a->len);
-	while (++i < a->len)
+	while (i <= a->len - 1)
 	{
 		if (a->a[i] > n && a->a[i] < k)
 			k = a->a[i];
+		i++;
 	}
 	return (k);
 }
