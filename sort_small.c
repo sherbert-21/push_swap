@@ -1,47 +1,24 @@
 #include "push_swap.h"
 
-static void	get_min_max(int *min_p, int *max_p, t_arr *a)
-{
-	int i;
-	int min;
-	int max;
-
-	i = -1;
-	min = 2147483647;
-	max = -2147483648;
-	while (++i < a->len)
-	{
-		if (min > a->a[i])
-		{
-			min = a->a[i];
-			*min_p = i;
-		}
-		if (max < a->a[i])
-		{
-			max = a->a[i];
-			*max_p = i;
-		}
-	}
-}
-
 static void	sort_three(t_arr *a)
 {
-	int min;
-	int max;
+	int min_p;
+	int max_p;
 
 	if (a->len == 2)
 		run(SA, a, NULL, 1);
-	get_min_max(&min, &max, a);
-	if (min == 1 && max == 2)
+	min_p = position(a, min(a->a, a->len));
+	max_p = position(a, max(a->a, a->len));
+	if (min_p == 1 && max_p == 2)
 		run(SA, a, NULL, 1);
-	else if (max == 0 && min == 2)
+	else if (max_p == 0 && min_p == 2)
 	{
 		run(SA, a, NULL, 1);
 		run(RRA, a, NULL, 1);
 	}
-	else if (max == 0 && min == 1)
+	else if (max_p == 0 && min_p == 1)
 		run(RA, a, NULL, 1);
-	else if (min == 0 && max == 1)
+	else if (min_p == 0 && max_p == 1)
 	{
 		run(SA, a, NULL, 1);
 		run(RA, a, NULL, 1);
@@ -52,18 +29,19 @@ static void	sort_three(t_arr *a)
 
 static void push_to_b(t_arr *a, t_arr *b)
 {
-	int		min;
-	int		max;
+	int		min_p;
+	int		max_p;
 	int		mid;
 
 	while (a->len > 3)
 	{
 		mid = (a->len - 1) / 2;
-		get_min_max(&min, &max, a);
-		if (min != mid && abs(mid - min) > abs(mid - max))
-			smart_rotate_a(a, a->a[min]);
+		min_p = position(a, min(a->a, a->len));
+		max_p = position(a, max(a->a, a->len));
+		if (min_p != mid && abs(mid - min_p) > abs(mid - max_p))
+			smart_rotate_a(a, a->a[min_p]);
 		else
-			smart_rotate_a(a, a->a[max]);
+			smart_rotate_a(a, a->a[max_p]);
 		run(PB, a, b, 1);
 	}
 }

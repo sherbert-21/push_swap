@@ -1,32 +1,27 @@
 #include "push_swap.h"
 
-static int	between(int n, int min, int max)
-{
-	return (n >= min && n <= max);
-}
-
-static int	find_from_top(t_arr *a, int min, int max)
+static int	find_top(t_arr *a, int min, int max)
 {
 	int	i;
 
 	i = 0;
 	while (i < a->len)
 	{
-		if (between(a->a[i], min, max))
+		if (a->a[i] >= min && a->a[i] <= max)
 			return (i);
 		i++;
 	}
 	return (-1);
 }
 
-static int	find_from_bottom(t_arr *a, int min, int max)
+static int	find_bottom(t_arr *a, int min, int max)
 {
 	int	i;
 
 	i = a->len - 1;
 	while (i >= 0)
 	{
-		if (between(a->a[i], min, max))
+		if (a->a[i] >= min && a->a[i] <= max)
 			return (i);
 		i--;
 	}
@@ -38,8 +33,8 @@ void	move_top(t_arr *a, int min, int max)
 	int	i;
 	int	pos[2];
 
-	pos[0] = find_from_top(a, min, max);
-	pos[1] = find_from_bottom(a, min, max);
+	pos[0] = find_top(a, min, max);
+	pos[1] = find_bottom(a, min, max);
 	if (pos[0] < a->len - 1 - pos[1])
 		i = pos[0];
 	else
