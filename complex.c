@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   complex.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/23 13:41:28 by sherbert          #+#    #+#             */
+/*   Updated: 2021/12/23 13:46:41 by sherbert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	put_in_position(t_arr *a, t_arr *b)
@@ -34,8 +46,6 @@ void	move_chunk(t_arr *a, t_arr *b, int min, int max)
 		size--;
 	}
 }
-
-
 
 void	sort_complex(t_arr *a)
 {

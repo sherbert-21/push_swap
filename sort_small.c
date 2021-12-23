@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/23 13:41:58 by sherbert          #+#    #+#             */
+/*   Updated: 2021/12/23 13:45:27 by sherbert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	sort_three(t_arr *a)
 {
-	int min_p;
-	int max_p;
+	int	min_p;
+	int	max_p;
 
 	if (a->len == 2)
 		run(SA, a, NULL, 1);
@@ -27,11 +39,11 @@ static void	sort_three(t_arr *a)
 		run(RRA, a, NULL, 1);
 }
 
-static void push_to_b(t_arr *a, t_arr *b)
+static void	push_to_b(t_arr *a, t_arr *b)
 {
-	int		min_p;
-	int		max_p;
-	int		mid;
+	int	min_p;
+	int	max_p;
+	int	mid;
 
 	while (a->len > 3)
 	{
@@ -60,11 +72,11 @@ static void	sort_more(t_arr *a)
 	{
 		run(PA, a, b, 1);
 		if (a->a[0] > a->a[1])
-			run(RA, a, 	NULL, 1);
+			run(RA, a, NULL, 1);
 	}
 }
 
-void		sort_small(t_arr *a)
+void	sort_small(t_arr *a)
 {
 	if (a->len < 4)
 		sort_three(a);

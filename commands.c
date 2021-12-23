@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   commands.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/23 13:41:16 by sherbert          #+#    #+#             */
+/*   Updated: 2021/12/23 13:47:22 by sherbert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./push_swap.h"
 
 static void	s_command(t_arr *a)
@@ -14,8 +26,8 @@ static void	s_command(t_arr *a)
 
 void	rr_command(t_arr *a)
 {
-	int		i;
-	int		tmp;
+	int	i;
+	int	tmp;
 
 	i = a->len;
 	tmp = a->a[a->len - 1];
@@ -35,10 +47,11 @@ void	r_command(t_arr *a)
 		a->a[i] = a->a[i + 1];
 	a->a[a->len - 1] = tmp;
 }
+
 static void	p_command(t_arr *a, t_arr *b)
 {
-	int i;
-	int save;
+	int	i;
+	int	save;
 
 	i = -1;
 	save = a->a[0];
@@ -52,7 +65,7 @@ static void	p_command(t_arr *a, t_arr *b)
 	b->a[0] = save;
 }
 
-int		run(char *c, t_arr *a, t_arr *b, int n)
+int	run(char *c, t_arr *a, t_arr *b, int n)
 {
 	if (!(ft_strncmp(c, SA, 2)))
 		s_command(a);

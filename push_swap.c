@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/23 13:41:46 by sherbert          #+#    #+#             */
+/*   Updated: 2021/12/23 13:46:02 by sherbert         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./push_swap.h"
 
-static t_arr *init_arr(int argc)
+static t_arr	*init_arr(int argc)
 {
-	t_arr *a;
+	t_arr	*a;
 
 	a = malloc(sizeof(t_arr));
 	if (!a)
@@ -15,9 +27,9 @@ static t_arr *init_arr(int argc)
 	return (a);
 }
 
-t_arr *init_arr_b(int argc)
+t_arr	*init_arr_b(int argc)
 {
-	t_arr *a;
+	t_arr	*a;
 
 	a = malloc(sizeof(t_arr));
 	if (!a)
@@ -30,9 +42,9 @@ t_arr *init_arr_b(int argc)
 	return (a);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_arr *a;
+	t_arr	*a;
 
 	if (argc < 3 || check(argc, argv))
 		return (err());
