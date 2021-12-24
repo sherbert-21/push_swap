@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/23 13:42:01 by sherbert          #+#    #+#             */
-/*   Updated: 2021/12/23 13:45:36 by sherbert         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 int	is_sorted(t_arr *a)
 {
-	int	i;
+	int i;
 
 	i = -1;
 	while (++i < a->len - 1)
@@ -27,10 +15,18 @@ int	is_sorted(t_arr *a)
 
 void	sort(t_arr *a)
 {
+	t_arr	*b;
+
+	b = init_arr_b(a->len + 1);
 	if (is_sorted(a) == 1)
 		ft_printf("\n");
 	else if (a->len < 50)
-		sort_small(a);
+		sort_small(a, b);
 	else
-		sort_complex(a);
+		sort_complex(a, b);
+	// free(b->a);
+	// free(b);
+	// free(a->a);
+	// free(a);
+	check_final(a, b);
 }

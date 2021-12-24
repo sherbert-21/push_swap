@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/23 13:41:53 by sherbert          #+#    #+#             */
-/*   Updated: 2021/12/23 13:41:53 by sherbert         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "./libft/libft.h"
@@ -50,7 +38,9 @@ int	position(t_arr *a, int n);
 
 void		sort(t_arr *a);
 int			is_sorted(t_arr *a);
-void		sort_small(t_arr *a);
-void		sort_complex(t_arr *a);
+void		sort_small(t_arr *a, t_arr *b);
+void		sort_complex(t_arr *a, t_arr *b);
+
+void check_final(t_arr *a, t_arr *b);
 
 #endif

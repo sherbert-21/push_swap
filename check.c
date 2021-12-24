@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sherbert <sherbert@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/23 13:41:06 by sherbert          #+#    #+#             */
-/*   Updated: 2021/12/23 13:48:18 by sherbert         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "./push_swap.h"
 
 static int	stupid_check(int argc, char **argv)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (++i < argc)
@@ -25,8 +13,8 @@ static int	stupid_check(int argc, char **argv)
 
 static int	alpha_check(int argc, char **argv)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 0;
 	while (++i < argc)
@@ -44,10 +32,10 @@ static int	alpha_check(int argc, char **argv)
 
 static int	overflow_check(int argc, char **argv)
 {
-	int	i;
-	int	k;
-	int	sign;
-
+	int i;
+	int k;
+	int sign;
+	
 	i = 0;
 	while (++i < argc)
 	{
@@ -59,7 +47,7 @@ static int	overflow_check(int argc, char **argv)
 			sign = -1;
 		}
 		if (k < 10)
-			continue ;
+			continue;
 		else if (k > 10)
 			return (1);
 		else if (k == 10 && (ft_atoi(argv[i]) == -1 || ft_atoi(argv[i]) == 0))
@@ -70,8 +58,8 @@ static int	overflow_check(int argc, char **argv)
 
 static int	double_check(int argc, char **argv)
 {
-	int	i;
-	int	j;
+	int i;
+	int j;
 
 	i = 0;
 	while (++i < argc - 1)
@@ -84,7 +72,7 @@ static int	double_check(int argc, char **argv)
 	return (0);
 }
 
-int	check(int argc, char **argv)
+int check(int argc, char **argv)
 {
 	if (alpha_check(argc, argv))
 		return (1);

@@ -15,7 +15,8 @@ SRC = \
 	move_chunk.c \
 	complex.c \
 	min_max.c \
-	smart.c
+	smart.c \
+	check_ps.c
 
 OBJ		= 	$(SRC:.c=.o)
 
